@@ -1,0 +1,13 @@
+.header__logo-link {
+  transition: opacity .3s ease-in-out;
+}
+
+.header__logo-link:hover {
+  opacity: .5;
+}
+
+@media (max-width: 600px) {
+  .header__logo-link {
+    margin-left: 27px;
+  }
+}

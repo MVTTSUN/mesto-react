@@ -1,0 +1,10 @@
+.photos {
+  margin-bottom: 67px;
+}
+
+@media (max-width: 600px) {
+  .photos {
+    margin: 0 auto 48px;
+    max-width: 282px;
+  }
+}

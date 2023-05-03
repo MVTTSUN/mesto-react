@@ -1,0 +1,13 @@
+.popup__caption {
+  max-width: 291px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFF;
+}
+
+@media (max-width: 600px) {
+  .popup__caption {
+    max-width: 240px;
+  }
+}
