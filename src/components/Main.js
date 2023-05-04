@@ -17,13 +17,13 @@ export default function Main({onEditAvatar, onEditProfile, onAddPlace, onCardCli
         setUserAvatar(avatar);
       })
       .catch((err) => console.log(err));
-  })
+  }, [])
 
   useEffect(() => {
     api.getCards()
       .then((cards) => setCards(cards))
       .catch((err) => console.log(err));
-  })
+  }, [])
 
   return (
     <main>

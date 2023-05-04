@@ -1,6 +1,6 @@
 import useClosePopup from "../hooks/useClosePopup";
 
-export default function PopupWithForm({children, title, name, isOpen, onClose}) {
+export default function PopupWithForm({children, title, name, textButton, isOpen, onClose,}) {
   useClosePopup(isOpen, onClose);
 
   return (
@@ -10,6 +10,7 @@ export default function PopupWithForm({children, title, name, isOpen, onClose}) 
         <form className="popup__form" action="#" id={`form-popup-${name}`} name={`form-popup-${name}`}>
           <h2 className="popup__name">{title}</h2>
           {children}
+          <button className="popup__submit-button button" type="submit">{textButton}</button>
         </form>
       </div>
     </div>

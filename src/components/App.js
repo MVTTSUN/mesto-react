@@ -12,7 +12,6 @@ export default function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
-  const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({ link: '', name: '' });
 
   const handleEditAvatarClick = () => {
@@ -29,14 +28,13 @@ export default function App() {
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
-    setIsImagePopupOpen(true);
   };
 
   const closeAllPopups = () => {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
-    setIsImagePopupOpen(false);
+    setSelectedCard({ link: '', name: '' })
   }
 
   return (
@@ -56,7 +54,7 @@ export default function App() {
       <PopupAddCard isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
       <PopupEditAvatar isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />
       <PopupConfirmDelete />
-      <ImagePopup card={selectedCard} isOpen={isImagePopupOpen} onClose={closeAllPopups} />
+      <ImagePopup card={selectedCard} onClose={closeAllPopups} />
     </>
   );
 }
