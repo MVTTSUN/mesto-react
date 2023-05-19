@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import PopupWithForm from './PopupWithForm';
 import useClosePopup from '../hooks/useClosePopup';
 
@@ -12,6 +12,9 @@ export default function EditAvatarPopup({isOpen, onClose, onUpdateAvatar, isLoad
   }
 
   useClosePopup(isOpen, onClose);
+  useEffect(() => {
+    avatarRef.current.value = '';
+  }, [isOpen]);
 
   return (
     <PopupWithForm isLoading={isLoading} onSubmit={handleSubmit} isOpen={isOpen} onClose={onClose} name='avatar' title='Обновить аватар' textButton={textButton}>

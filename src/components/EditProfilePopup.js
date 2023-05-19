@@ -19,7 +19,7 @@ export default function EditProfilePopup({isOpen, onClose, onUpdateUser, isLoadi
   useEffect(() => {
     setName(currentUser.name);
     setDescription(currentUser.about);
-  }, [currentUser]);
+  }, [currentUser, isOpen]);
 
   useClosePopup(isOpen, onClose);
 

@@ -64,7 +64,7 @@ export default function App() {
   const handleOpenConfirmDeletePopup = (currCard) => {
     setIsConfirmDeletePopupOpen(true);
     setFocusCardDelete(currCard);
-  }
+  };
 
   const handleCardDelete = () => {
     setIsLoading(true);
@@ -112,13 +112,13 @@ export default function App() {
       })
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false));
-  }
+  };
 
   useEffect(() => {
     api.getCards()
       .then((cards) => setCards(cards))
       .catch((err) => console.log(err));
-  }, [cards])
+  }, []);
 
   useEffect(() => {
     api.getUserInfo()
@@ -126,7 +126,7 @@ export default function App() {
         setCurrentUser({ name, about, avatar, _id });
       })
       .catch((err) => console.log(err));
-  }, [currentUser]);
+  }, []);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
