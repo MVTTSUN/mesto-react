@@ -3,6 +3,7 @@ import useClosePopup from '../hooks/useClosePopup';
 export default function ImagePopup({card, onClose}) {
   const {link, name} = card;
   const isOpen = !!(name && link);
+  
   useClosePopup(isOpen, onClose);
 
   return (
